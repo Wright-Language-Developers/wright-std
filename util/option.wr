@@ -1,0 +1,37 @@
+
+import std::util::void::void;
+
+/*!!
+Option is a useful union type that enables what other languages know as 'null',
+'None', or 'nil'.
+*/
+
+pub union Option<T> {
+    Some: T,
+    None: void
+}
+
+impl<T> Option<T> {
+
+    /// Construct a new option of the 'None' variety.
+    ///
+    pub fn empty() -> Self {
+        Self::None(void::void())
+    }
+
+    /// Construct a new option of the 'Some' variant, with a value moved into
+    /// the option.
+    pub fn of(inner: T) -> Self {
+        Self::Some(inner)
+    }
+
+    /// Check if this option is 'Some'.
+    pub fn is_some(ref self) -> bool {
+        Option::Some := self  // use walrus operator.
+    }
+
+    /// Check if this option is 'None'.
+    pub fn is_none(ref self) -> bool {
+        Option::None := self
+    }
+}

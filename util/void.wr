@@ -1,0 +1,13 @@
+
+/*!!
+Void type. void is an empty, zero-sized type, representing nothing.
+*/
+
+pub struct void {}
+
+impl void {
+    /// Return an instance of the void object.
+    pub fn void() {
+        // intentionally empty to return void.
+    }
+}
